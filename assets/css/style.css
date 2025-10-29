@@ -1,1 +1,170 @@
-/*# sourceMappingURL=style.css.map */
+@font-face {
+  font-family: "Inconsolata";
+  src: url("/assets/fonts/Inconsolata-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 400, 500, 700, 800;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Inconsolata";
+  color: hsl(252, 6%, 83%);
+}
+
+h1 {
+  font-size: 28px;
+  color: hsl(0, 0%, 100%);
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 400;
+  color: hsl(245, 15%, 58%);
+}
+
+.container {
+  background-image: url("/assets/images/background-mobile.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+  height: 100dvh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  z-index: 1;
+}
+.header img {
+  width: 60%;
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+label {
+  font-size: 20px;
+}
+
+.ticket-form__file {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px dashed hsl(245, 15%, 58%);
+  padding: 10px;
+  border-radius: 20px;
+  background-color: rgba(75.11875, 72.2925, 106.2075, 0.25);
+  height: 120px;
+  gap: 15px;
+}
+
+.info-icon {
+  width: 16px;
+  height: 16px;
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid hsl(245, 15%, 58%);
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: "Inconsolata";
+  color: hsl(252, 6%, 83%);
+  background-color: rgba(75.11875, 72.2925, 106.2075, 0.25);
+}
+
+button {
+  padding: 10px;
+  border-radius: 10px;
+  font-family: "Inconsolata";
+  font-weight: 700;
+  font-size: 16px;
+  background-color: hsl(7, 88%, 67%);
+  border: none;
+  z-index: 1;
+}
+
+#file {
+  border: 1px dashed hsl(245, 15%, 58%) !important;
+  border-radius: 15px;
+  height: 100px;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  font-size: 12px;
+  color: hsl(245, 15%, 58%);
+}
+
+.upload-text {
+  color: hsl(245, 15%, 58%);
+}
+
+.upload-btn {
+  background: url("../images/icon-upload.svg") no-repeat center center;
+  background-color: hsl(245, 19%, 35%);
+  background-size: 32px 32px;
+  border: 1px solid hsl(245, 15%, 58%);
+  width: 48px;
+  height: 48px;
+  border-radius: 20%;
+  cursor: pointer;
+  transition: box-shadow 0.2s, outline 0.2s;
+}
+
+.ticket-start {
+  display: none;
+}
+
+.pattern__bottom {
+  width: 50%;
+  z-index: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.pattern__top, .pattern__lines, .pattern__bottom {
+  position: absolute;
+  z-index: 0;
+}
+.pattern__top {
+  width: 30%;
+  right: 0;
+  top: 15px;
+}
+.pattern__bottom {
+  width: 50%;
+  left: 0;
+  bottom: 0;
+}
+.pattern__lines {
+  top: 0;
+  left: 0;
+  max-inline-size: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 600px;
+}/*# sourceMappingURL=style.css.map */

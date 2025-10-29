@@ -8,50 +8,62 @@
   
   <title>Frontend Mentor | Conference ticket generator</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/main.js" defer></script>
 </head>
 <body>
 
   <!-- Form starts -->
+  <main class="container">
+    <section class="header">
+      <img src="./assets/images/logo-full.svg">
+      <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+      <h2>Secure your spot at next year's biggest coding conference.</h2>
+    </section>
+    <section class="ticket-form">
+      <form id="ticketForm" novalidate>
+        <label for="file">Upload Avatar</label>
+        <div class="ticket-form__file" >
+          <input name="file" id="file" type="file" style="display:none" />
+          <button type="button" class="upload-btn" id="customUploadBtn" aria-label="Upload avatar"></button>
+          <span class="upload-text">Drag and drop or click to upload</span>
+        </div> 
+        <span class="file-info">  
+          <img src="/assets/images/icon-info.svg"  alt="info icon" class="info-icon">      
+          Upload your photo (JPG or PNG, max size: 500KB).
+        </span>
 
-  Your Journey to Coding Conf 2025 Starts Here!
+        
+        <label for="full-name">Full Name</label>
+        <input name="full-name" id="full-name"/>
+        <label for="email">Email Address</label>
+        <input name="email" id="email" placeholder="example@email.com" class="input-email" autocomplete="off" type="email"/>
+        <label for="username">GitHub Username</label>        
+        <input name="username" id="username" placeholder="@yourusername" autocomplete="off"/>
+        
+        <button >Generate My Ticket</button>
+      </form>
 
-  Secure your spot at next year's biggest coding conference.
+      <div class="pattern">
+        <img src="./assets/images/pattern-squiggly-line-top.svg" alt="background pattern" class="pattern__top">
+        <img src="./assets/images/pattern-lines.svg" alt="background pattern" class="pattern__lines">
+        <img src="./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg" alt="background pattern" class="pattern__bottom">
+      </div>
 
-  Upload Avatar
-  Drag and drop or click to upload
-  Upload your photo (JPG or PNG, max size: 500KB).
-
-  Full Name
-
-  Email Address
-  example@email.com
-
-  GitHub Username
-  @yourusername
-
-  Generate My Ticket
-
+    </section>
   <!-- Form ends -->
 
   <!-- Generated tickets starts -->
-
+<div class="ticket-start">
   Congrats, <!-- Full Name -->! Your ticket is ready.
 
-  We've emailed your ticket to <!-- Email Address --> and will send updates in the run up to the event.
+    We've emailed your ticket to <!-- Email Address --> and will send updates in the run up to the event.
 
-  Coding Conf
-  Jan 31, 2025 / Austin, TX
-
+    Coding Conf
+    Jan 31, 2025 / Austin, TX
+</div>
+ 
   <!-- Generated tickets ends -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </main>
 </body>
 </html>
