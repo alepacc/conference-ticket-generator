@@ -6,7 +6,7 @@ $neutral-700: hsl(245, 19%, 35%);
 $neutral-900: hsl(248, 70%, 10%);
 $orange-500: hsl(7, 88%, 67%);
 $orange-700: hsl(7, 71%, 60%);
-$gradient-text: linear-gradient(to right, hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+$gradient-text: linear-gradient(to right, $orange-700, $neutral-0);
 
 @font-face {
     font-family: "Inconsolata";
@@ -29,6 +29,7 @@ body {
 h1{
     font-size: 28px;
     color: $neutral-0;
+    text-align: center;
 }
 
 h2
@@ -36,6 +37,7 @@ h2
     font-size: 20px;
     font-weight: 400;
     color: $neutral-500;
+    text-align: center;
 }
 
 .container {
@@ -45,6 +47,11 @@ h2
     background-position: center;
     padding: 20px;
     height: 100dvh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 
 }
 
@@ -58,6 +65,12 @@ h2
     gap: 15px;
     position: relative;
     z-index: 1;
+
+    &__text{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
 
     img{
         width: 60%;
@@ -153,9 +166,6 @@ button{
 }
 
 
-.ticket-start{
-    display: none;
-}
 
 .pattern__bottom{
     width: 50%;
@@ -197,3 +207,94 @@ button{
         height: 600px;
     }
 }
+
+
+
+.ticket{
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    @media (min-width: 768px) {
+        gap: 40px;
+        width: 50%;
+        background-image: url("/assets/images/pattern-circle.svg");
+    }
+
+   
+
+    &__result{
+        // display: flex;
+        // flex-wrap: wrap;
+        background-image: url("/assets/images/pattern-ticket.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+    
+        height: 150px;
+        
+        display: grid;
+        align-items: center;
+        // grid-template-columns: 50px 200px 50px;
+        grid-template-areas: "header header sidebar" "main main sidebar";
+        justify-items: center;
+        grid-auto-flow: unset;
+        align-content: stretch;
+        grid-template-columns: 60px 200px 50px;
+
+
+    }
+
+    &__avatar-image{
+        width: 50px;
+        border-radius: 10px;
+    }
+
+    
+
+    &__number{
+        grid-area: sidebar;
+        transform: rotate(90deg);
+        justify-self: end;
+        font-size: 14px;
+        color: $neutral-500;
+    }
+
+    &__username{
+        background-image: $gradient-text;
+        color: transparent;
+        background-clip: text;
+    }
+
+    &__email{
+        color: $orange-700;
+    }
+
+    &__info {
+           
+        padding: 10px;
+        display: ruby;
+
+
+    }
+    &__user-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 5px;
+    }
+
+    &__github{
+        display: flex;
+        gap: 5px;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+
+
+

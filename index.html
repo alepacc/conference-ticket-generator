@@ -17,8 +17,10 @@
   <main class="container">
     <section class="header">
       <img src="./assets/images/logo-full.svg">
+      <div class="header__text">
       <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
       <h2>Secure your spot at next year's biggest coding conference.</h2>
+      </div>
     </section>
     <section class="ticket-form">
       <form id="ticketForm" novalidate>
@@ -41,7 +43,7 @@
         <label for="username">GitHub Username</label>        
         <input name="username" id="username" placeholder="@yourusername" autocomplete="off"/>
         
-        <button >Generate My Ticket</button>
+        <button type="submit" class="generate-ticket">Generate My Ticket</button>
       </form>
 
       <div class="pattern">
@@ -54,13 +56,37 @@
   <!-- Form ends -->
 
   <!-- Generated tickets starts -->
-<div class="ticket-start">
-  Congrats, <!-- Full Name -->! Your ticket is ready.
+  <section class="ticket">
+    <h1>Congrats, <span class="ticket__username">Jonatan Kristof</span><!-- Full Name -->! Your ticket is ready.</h1>
+    <h2>We've emailed your ticket to <span class="ticket__email">jonatan@emial.com</span><!-- Email Address --> and will send updates in the run up to the event.</h2>
+    
+    <div class="ticket__result">
+      <img src="assets/images/logo-mark.svg">
+      <div class="ticket__user-info">
+        <h1>Coding Conf</h1>
+        <p>Jan 31, 2025 / Austin, TX</p>
+      </div>        
+      <div class="ticket__number">#01609</div>
+      <img src="assets/images/image-avatar.jpg" alt="User Avatar" class="ticket__avatar-image"><!-- Avatar Image -->
+      <div class="ticket__info">
+        <span class="ticket__full-name">Jonatan Kristof</span><!-- Full Name -->
+        <span class="ticket__github">
+          <img src="assets/images/icon-github.svg" alt="GitHub Icon" class="ticket__github-icon"> 
+          <p class="ticket__github-username"></p>
+        </span><!-- GitHub Username -->
+      </div>
+    </div>
+   
+  </section>
 
-    We've emailed your ticket to <!-- Email Address --> and will send updates in the run up to the event.
+  <div class="pattern">
+    <img src="./assets/images/pattern-squiggly-line-top.svg" alt="background pattern" class="pattern__top">
+    <img src="./assets/images/pattern-lines.svg" alt="background pattern" class="pattern__lines">
+    <img src="./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg" alt="background pattern" class="pattern__bottom">
+    <picture>
+      <source media="(min-width: 768px)" src="./assets/images/pattern-circle.svg" alt="pattern___circle" class="pattern___circle">
 
-    Coding Conf
-    Jan 31, 2025 / Austin, TX
+    </picture> 
 </div>
  
   <!-- Generated tickets ends -->
