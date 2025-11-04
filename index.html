@@ -27,15 +27,24 @@
       <form id="ticketForm" validate>
         <label for="file">Upload Avatar</label>
         <div class="ticket-form__file" >
-          <input name="file" id="file" type="file"/>
-          <button type="button" class="upload-btn" id="customUploadBtn" aria-label="Upload avatar"></button>
+          <input name="file" id="file" type="file" accept="image/*"/>
+          <button type="button" class="upload-btn" id="customUploadBtn" aria-label="Upload avatar">
+            <img src="/assets/images/icon-upload.svg" alt="upload icon" class="upload-icon">
+          </button>
           <span class="upload-text">Drag and drop or click to upload</span>
-        </div> 
+          <span class="preview-button">
+            <button type="button" class="remove-img" id="removeImgBtn" aria-label="Remove uploaded avatar">
+              <u>Remove image</u>
+            </button>
+            <button type="button" class="change-img" id="changeImgBtn" aria-label="Change uploaded avatar">
+              Change image
+            </button>  
+          </span> 
+        </div>
         <span class="file-info">  
           <img src="/assets/images/icon-info.svg"  alt="info icon" class="info-icon">      
           Upload your photo (JPG or PNG, max size: 500KB).
         </span>
-
         
         <label for="full-name">Full Name</label>
         <input name="full-name" id="full-name" required pattern="[a-zA-Z]{3,}\s[a-zA-Z]{3,}" minlength="3" title="Name Surname"/>

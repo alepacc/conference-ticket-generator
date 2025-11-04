@@ -2,21 +2,62 @@ const form = document.getElementById('ticketForm');
 const header = document.querySelector(".header__text");
 const btn = document.querySelector(".generate-ticket");
 const fileInput = document.getElementById('file');
+const inputAvatarImg = document.querySelector('.ticket-form__file');
+const uploadBtn = document.getElementById('customUploadBtn');
+const avatarBtns = document.querySelector(".preview-button");
+const uploadText = document.querySelector(".upload-text");
 
-// Custom upload button logic
+
+// Custom upload area logic
 document.addEventListener('DOMContentLoaded', function() {
-	var uploadBtn = document.getElementById('customUploadBtn');
-	if (uploadBtn && fileInput) {
-		uploadBtn.addEventListener('click', function() {
-			fileInput.click();
+	if (uploadBtn || fileInput) { 
+		inputAvatarImg.addEventListener('click', function(e) {
+			if (fileInput.files.length === 0) {
+				console.log('Upload button clicked');
+				fileInput.click();
+			}
 		});
 	}
 });
 
-// file input uploded success alert
+// preview avatar image form
+const removeAvatar = document.getElementById('removeImgBtn');
+const changeAvatar = document.getElementById('changeImgBtn');
+const uploadImg = document.querySelector('.upload-icon');
+
+// button to change avatar image 
+changeAvatar.addEventListener('click', function(e) {
+	e.preventDefault();
+	if (fileInput) {
+		fileInput.click();
+	}
+});
+
+// button to remove avatar image
+removeAvatar.addEventListener('click', function(e){
+	e.preventDefault();
+	avatarBtns.style.display = 'none';
+	uploadText.style.display = 'block';
+	// restore original img
+	uploadImg.src = "/assets/images/icon-upload.svg";
+	// delete uploded file
+	fileInput.value = '';
+	e.stopPropagation();
+});
+
+
+// file input uploded success 
 fileInput.addEventListener('change', function() {
+	
 	if (fileInput.files && fileInput.files.length > 0) {
-		alert('Avatar image uploaded successfully!');
+		const reader = new FileReader();
+		reader.onload = function(evt) {
+			if (uploadImg) uploadImg.src = evt.target.result, console.log('Avatar image uploaded successfully!')	;
+			uploadText.style.display = 'none';
+			avatarBtns.style.display = 'block';
+		};
+		reader.readAsDataURL(fileInput.files[0]);
+		// alert('Avatar image uploaded successfully!');
 	}
 });
 
@@ -55,7 +96,7 @@ btn.addEventListener('click', (e) =>{
 	document.querySelector(".ticket__github-username").innerText = githubValue;
 	
 	// show avatar preview if file selected
-	if (fileInput && fileInput.files && fileInput.files[0]) {
+	if (fileInput) {
 		const reader = new FileReader();
 		reader.onload = function(evt) {
 			const img = document.querySelector('.ticket__avatar-image');
