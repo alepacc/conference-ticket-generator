@@ -8,6 +8,10 @@ $orange-500: hsl(7, 88%, 67%);
 $orange-700: hsl(7, 71%, 60%);
 $gradient-text: linear-gradient(to right, $orange-700, $neutral-0);
 
+// viewport brekkpoints
+$breakpoint-md: 768px;
+
+
 @font-face {
     font-family: "Inconsolata";
     src: url("/assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf") format("truetype");
@@ -27,9 +31,10 @@ body {
 }
 
 h1{
-    font-size: 28px;
+    font-size: clamp(28px, 5vw, 45px);
     color: $neutral-0;
     text-align: center;
+
 }
 
 h2
@@ -38,10 +43,18 @@ h2
     font-weight: 400;
     color: $neutral-500;
     text-align: center;
+    @media (min-width: $breakpoint-md) {
+        width: 70%;
+
+    }
 }
 
 .container {
     background-image: url("/assets/images/background-mobile.png");
+    @media (min-width: $breakpoint-md) {
+        background-image: url("/assets/images/background-desktop.png");
+        
+    }
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -84,6 +97,10 @@ form {
     gap: 10px;
     position: relative;
     z-index: 1;
+}
+
+#file{
+    display: none;
 }
 
 label{
@@ -178,7 +195,8 @@ button{
 .pattern{
     &__top, 
     &__lines,
-    &__bottom{
+    &__bottom,
+    &__circle{
         position: absolute;
         z-index: 0;
     }
@@ -205,6 +223,18 @@ button{
         max-inline-size: 100%;
         object-fit: cover;
         height: 600px;
+
+        @media (min-width: $breakpoint-md) {
+            width: 100%;
+        }
+    }
+
+    &__circle{
+        top: 45%;
+        right: 20%;
+        @media (max-width: 767px) {
+            display: none;
+        }
     }
 }
 
@@ -219,12 +249,11 @@ button{
     position: relative;
     z-index: 1;
     height: 100%;
-    @media (min-width: 768px) {
-        gap: 40px;
-        width: 50%;
-        background-image: url("/assets/images/pattern-circle.svg");
+    @media (min-width: $breakpoint-md) {
+       width: 45%;
+       gap: 45px;
+       
     }
-
    
 
     &__result{
@@ -245,6 +274,12 @@ button{
         align-content: stretch;
         grid-template-columns: 60px 200px 50px;
 
+        @media (min-width: $breakpoint-md) {
+            height: 200px;
+            grid-template-columns: 80px 1fr 70px;
+            margin-top: 40px;
+
+        }
 
     }
 
@@ -259,7 +294,7 @@ button{
         grid-area: sidebar;
         transform: rotate(90deg);
         justify-self: end;
-        font-size: 14px;
+        font-size: 20px;
         color: $neutral-500;
     }
 
@@ -274,10 +309,10 @@ button{
     }
 
     &__info {
-           
-        padding: 10px;
-        display: ruby;
-
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
 
     }
     &__user-info {

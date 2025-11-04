@@ -22,11 +22,12 @@
       <h2>Secure your spot at next year's biggest coding conference.</h2>
       </div>
     </section>
+    
     <section class="ticket-form">
-      <form id="ticketForm" novalidate>
+      <form id="ticketForm" validate>
         <label for="file">Upload Avatar</label>
         <div class="ticket-form__file" >
-          <input name="file" id="file" type="file" style="display:none" />
+          <input name="file" id="file" type="file"/>
           <button type="button" class="upload-btn" id="customUploadBtn" aria-label="Upload avatar"></button>
           <span class="upload-text">Drag and drop or click to upload</span>
         </div> 
@@ -37,11 +38,11 @@
 
         
         <label for="full-name">Full Name</label>
-        <input name="full-name" id="full-name"/>
+        <input name="full-name" id="full-name" required pattern="[a-zA-Z]{3,}\s[a-zA-Z]{3,}" minlength="3" title="Name Surname"/>
         <label for="email">Email Address</label>
-        <input name="email" id="email" placeholder="example@email.com" class="input-email" autocomplete="off" type="email"/>
+        <input name="email" id="email" placeholder="example@email.com" class="input-email" autocomplete="on" type="email" required pattern="\w+@\w+\.[a-z]{2,3}" title="example@email.com"/>
         <label for="username">GitHub Username</label>        
-        <input name="username" id="username" placeholder="@yourusername" autocomplete="off"/>
+        <input name="username" id="username" placeholder="@yourusername" autocomplete="off" required pattern="@\w+" title="@yourusername"/>
         
         <button type="submit" class="generate-ticket">Generate My Ticket</button>
       </form>
@@ -63,7 +64,7 @@
     <div class="ticket__result">
       <img src="assets/images/logo-mark.svg">
       <div class="ticket__user-info">
-        <h1>Coding Conf</h1>
+        <h3>Coding Conf</h3>
         <p>Jan 31, 2025 / Austin, TX</p>
       </div>        
       <div class="ticket__number">#01609</div>
@@ -83,10 +84,7 @@
     <img src="./assets/images/pattern-squiggly-line-top.svg" alt="background pattern" class="pattern__top">
     <img src="./assets/images/pattern-lines.svg" alt="background pattern" class="pattern__lines">
     <img src="./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg" alt="background pattern" class="pattern__bottom">
-    <picture>
-      <source media="(min-width: 768px)" src="./assets/images/pattern-circle.svg" alt="pattern___circle" class="pattern___circle">
-
-    </picture> 
+    <img src="./assets/images/pattern-circle.svg" alt="pattern__circle" class="pattern__circle">
 </div>
  
   <!-- Generated tickets ends -->
