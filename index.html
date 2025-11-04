@@ -42,7 +42,7 @@
         <label for="email">Email Address</label>
         <input name="email" id="email" placeholder="example@email.com" class="input-email" autocomplete="on" type="email" required pattern="\w+@\w+\.[a-z]{2,3}" title="example@email.com"/>
         <label for="username">GitHub Username</label>        
-        <input name="username" id="username" placeholder="@yourusername" autocomplete="off" required pattern="@\w+" title="@yourusername"/>
+        <input name="username" id="username" placeholder="@yourusername" autocomplete="on" required pattern="@\w+" title="@yourusername"/>
         
         <button type="submit" class="generate-ticket">Generate My Ticket</button>
       </form>
@@ -62,7 +62,7 @@
     <h2>We've emailed your ticket to <span class="ticket__email">jonatan@emial.com</span><!-- Email Address --> and will send updates in the run up to the event.</h2>
     
     <div class="ticket__result">
-      <img src="assets/images/logo-mark.svg">
+      <img src="assets/images/logo-mark.svg" alt="logo-mark" class="logo-icon">
       <div class="ticket__user-info">
         <h3>Coding Conf</h3>
         <p>Jan 31, 2025 / Austin, TX</p>
