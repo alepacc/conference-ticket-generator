@@ -28,7 +28,15 @@ body {
     font-size: 16px;
     font-family: "Inconsolata";
     color: $neutral-300;
+
 }
+
+
+:focus {
+    outline: 2px solid $neutral-300;
+    outline-offset: 2px;
+}
+
 
 h1{
     font-size: clamp(28px, 5vw, 45px);
@@ -172,6 +180,7 @@ button{
 }
 .ticket-form__file{
     cursor: pointer;
+
 }
 
 #file{

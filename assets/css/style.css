@@ -15,6 +15,11 @@ body {
   color: hsl(252, 6%, 83%);
 }
 
+:focus {
+  outline: 2px solid hsl(252, 6%, 83%);
+  outline-offset: 2px;
+}
+
 h1 {
   font-size: clamp(28px, 5vw, 45px);
   color: hsl(0, 0%, 100%);
