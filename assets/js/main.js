@@ -61,7 +61,7 @@ removeAvatar.addEventListener('click', function(e){
 	avatarBtns.style.display = 'none';
 	uploadText.style.display = 'block';
 	// restore original img
-	uploadImg.src = "../images/icon-upload.svg";
+	uploadImg.src = "./assets/images/icon-upload.svg";
 	// delete uploded file
 	fileInput.value = '';
 	e.stopPropagation();
