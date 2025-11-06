@@ -14,7 +14,7 @@ $breakpoint-md: 768px;
 
 @font-face {
     font-family: "Inconsolata";
-    src: url("/assets/fonts/Inconsolata-VariableFont_wdth\,wght.ttf") format("truetype");
+    src: url("../fonts/Inconsolata-VariableFont_wdth\,wght.ttf") format("truetype");
     font-weight: 400, 500, 700, 800;
 }
 
@@ -59,9 +59,9 @@ h3{
 }
 
 .container {
-    background-image: url("/assets/images/background-mobile.png");
+    background-image: url("../images/background-mobile.png");
     @media (min-width: $breakpoint-md) {
-        background-image: url("/assets/images/background-desktop.png");
+        background-image: url("../images/background-desktop.png");
         
     }
     background-size: cover;
@@ -151,7 +151,7 @@ label{
     width: 15px;
     height: 15px;
     background-color: $neutral-500;
-    mask: url("/assets/images/icon-info.svg") no-repeat center center;
+    mask: url("../images/icon-info.svg") no-repeat center center;
 }
 
 .error{
@@ -307,7 +307,7 @@ button{
     &__result{
         // display: flex;
         // flex-wrap: wrap;
-        background-image: url("/assets/images/pattern-ticket.svg");
+        background-image: url("../images/pattern-ticket.svg");
         background-repeat: no-repeat;
         background-size: contain;
         margin-top: 40px;
