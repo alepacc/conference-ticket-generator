@@ -119,8 +119,16 @@ label {
 }
 
 .info-icon {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
+  background-color: hsl(245, 15%, 58%);
+  -webkit-mask: url("/assets/images/icon-info.svg") no-repeat center center;
+          mask: url("/assets/images/icon-info.svg") no-repeat center center;
+}
+
+.error {
+  display: none;
+  color: hsl(7, 71%, 60%);
 }
 
 input {

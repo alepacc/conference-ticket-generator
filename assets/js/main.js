@@ -7,6 +7,8 @@ const uploadBtn = document.getElementById('customUploadBtn');
 const avatarBtns = document.querySelector(".preview-button");
 const uploadText = document.querySelector(".upload-text");
 
+const orange_500 =  "hsl(7, 88%, 67%)";
+
 
 // Custom upload area logic
 document.addEventListener('DOMContentLoaded', function() {
@@ -19,6 +21,26 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	}
 });
+
+// drag and drop functionality
+if (inputAvatarImg) {
+	inputAvatarImg.addEventListener('dragover', function(e) {
+		e.preventDefault();
+		inputAvatarImg.classList.add('dragover');
+	});
+
+	inputAvatarImg.addEventListener('drop', function(e) {
+		e.preventDefault();
+		inputAvatarImg.classList.remove('dragover');
+		const files = e.dataTransfer.files;
+		if (files.length > 0) {
+			if (fileInput)
+			fileInput.files = files;
+			const event = new Event('change');
+			fileInput.dispatchEvent(event);
+		}
+	});
+}
 
 // preview avatar image form
 const removeAvatar = document.getElementById('removeImgBtn');
@@ -50,14 +72,17 @@ removeAvatar.addEventListener('click', function(e){
 fileInput.addEventListener('change', function() {
 	
 	if (fileInput.files && fileInput.files.length > 0) {
-		const reader = new FileReader();
-		reader.onload = function(evt) {
-			if (uploadImg) uploadImg.src = evt.target.result, console.log('Avatar image uploaded successfully!')	;
-			uploadText.style.display = 'none';
-			avatarBtns.style.display = 'block';
-		};
-		reader.readAsDataURL(fileInput.files[0]);
-		// alert('Avatar image uploaded successfully!');
+		if (validateImg()){
+			const reader = new FileReader();
+			reader.onload = function(evt) {
+				if (uploadImg) uploadImg.src = evt.target.result, console.log('Avatar image uploaded successfully!')	;
+				uploadText.style.display = 'none';
+				avatarBtns.style.display = 'block';
+			};
+			reader.readAsDataURL(fileInput.files[0]);
+			// alert('Avatar image uploaded successfully!');
+		}
+		
 	}
 });
 
@@ -111,7 +136,52 @@ btn.addEventListener('click', (e) =>{
 	header.style.display = "none";
 	document.querySelector(".ticket").style.display = "flex";
 
-
-
-
 });
+
+
+// JS validation for file input (avatar image)
+
+const infoIcon = document.querySelector('.info-icon');
+
+
+
+
+function validateImg() {
+	// fileInput.addEventListener('change', function () {
+	var file = fileInput.files[0];
+	var validTypes = ['image/jpeg', 'image/png'];
+	const maxSize = 500 * 1024; // 500KB
+
+	if (file) {
+		console.log('Selected file size:', file.size, 'max-size:', maxSize);
+		const errorText = document.querySelector('.error');
+		const text = document.querySelector('.text');
+		if (file.size > maxSize) {
+			// error = 'File too large. Please upload a photo under: 500KB.';
+			fileInput.value = '';
+			
+			// errorText.innerText = error;
+			// errorText.style.color = '';	
+			errorText.style.display = 'block';
+			text.style.display = 'none';
+			infoIcon.style.backgroundColor = orange_500;
+			console.log('File too large');
+			return false;
+		}
+		else { //#TODO: fix
+
+			text.style.display = 'block';
+			errorText.style.display = 'none';
+			infoIcon.style.backgroundColor = '';
+			return true;
+		}
+	}
+	
+}
+// create componet for error validation for file input (avatar image)
+// var error;
+// var componet = '<span class="file-info">  <img src="/assets/images/icon-info.svg"  alt="info icon" class="info-icon"> <p class="error">'+{error}+'</p></span>'; 
+// 
+
+
+
