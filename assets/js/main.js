@@ -99,6 +99,21 @@ btn.addEventListener('click', (e) =>{
 	var emailValue = emailInput ? emailInput.value.trim() : '';
 	var githubValue = githubInput ? githubInput.value.trim() : '';
 
+
+	pattern = "^[^ ]+@[^ ]+\.[a-z]{2,3}$";
+	var errorEmail = document.querySelector(".error-email");
+	var inputEmail = document.querySelector('.input-email');
+	if (!emailValue.match(pattern)) {
+		errorEmail.style.display = 'flex';
+		inputEmail.style.margin = '0';
+		inputEmail.style.border = '1px solid '+orange_500;
+		return;
+	}else if(emailValue.match(pattern)) {
+		errorEmail.style.display = 'none';
+		inputEmail.style.margin = '';
+		inputEmail.style.border = '';
+	}
+
 	// Check html form validation
 	if (!form.checkValidity()) {
 		form.reportValidity();
@@ -143,9 +158,6 @@ btn.addEventListener('click', (e) =>{
 
 const infoIcon = document.querySelector('.info-icon');
 
-
-
-
 function validateImg() {
 	// fileInput.addEventListener('change', function () {
 	var file = fileInput.files[0];
@@ -157,19 +169,15 @@ function validateImg() {
 		const errorText = document.querySelector('.error');
 		const text = document.querySelector('.text');
 		if (file.size > maxSize) {
-			// error = 'File too large. Please upload a photo under: 500KB.';
+			// File too large
 			fileInput.value = '';
-			
-			// errorText.innerText = error;
-			// errorText.style.color = '';	
 			errorText.style.display = 'block';
 			text.style.display = 'none';
 			infoIcon.style.backgroundColor = orange_500;
 			console.log('File too large');
 			return false;
 		}
-		else { //#TODO: fix
-
+		else { 
 			text.style.display = 'block';
 			errorText.style.display = 'none';
 			infoIcon.style.backgroundColor = '';
@@ -178,10 +186,3 @@ function validateImg() {
 	}
 	
 }
-// create componet for error validation for file input (avatar image)
-// var error;
-// var componet = '<span class="file-info">  <img src="/assets/images/icon-info.svg"  alt="info icon" class="info-icon"> <p class="error">'+{error}+'</p></span>'; 
-// 
-
-
-

@@ -138,8 +138,6 @@ label{
     cursor: pointer;
     font-size: 12px;
     color: $neutral-500;
-    // text-decoration: underline;
-    // color: hsl(252, 6%, 83%);
     background: $neutral-700;
     font-size: 12px;
     font-weight: 400;
@@ -153,6 +151,13 @@ label{
     background-color: $neutral-500;
     mask: url("../images/icon-info.svg") no-repeat center center;
 }
+.info-icon-error {
+    width: 15px;
+    height: 15px;
+    mask: url("../images/icon-info.svg") no-repeat center center;
+    background-color: $orange-700;
+}
+
 
 .error{
     display: none;
@@ -198,7 +203,7 @@ button{
     height: 100px;
 }
 
-.file-info {
+.file-info, .error-email {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -207,12 +212,16 @@ button{
     color: $neutral-500;
 }
 
+.error-email{
+    display: none;
+    color: $orange-700;
+}
+
 .upload-text{
     color:$neutral-500;
 }
 
 .upload-btn {
-    // background: url("../images/icon-upload.svg") no-repeat center center;
     background-color: $neutral-700;
     background-size: 32px 32px;
     outline: 1px solid $neutral-500;
@@ -221,7 +230,6 @@ button{
     border-radius: 20%;
     cursor: pointer;
     padding: 0;
-    // transition: box-shadow 0.2s, outline 0.2s;
 }
 
 .upload-icon{
@@ -305,8 +313,6 @@ button{
    
 
     &__result{
-        // display: flex;
-        // flex-wrap: wrap;
         background-image: url("../images/pattern-ticket.svg");
         background-repeat: no-repeat;
         background-size: contain;
@@ -316,11 +322,8 @@ button{
         padding: 10px;
         display: grid;
         align-items: center;
-        // grid-template-columns: 50px 200px 50px;
         grid-template-areas: "header header sidebar" "main main sidebar";
-        // grid-auto-flow: unset;
-        // align-content: stretch;
-        // grid-template-columns: 60px 200px 50px;
+        
 
         @media (min-width: $breakpoint-md) {
             height: 230px;

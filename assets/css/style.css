@@ -126,6 +126,14 @@ label {
           mask: url("../images/icon-info.svg") no-repeat center center;
 }
 
+.info-icon-error {
+  width: 15px;
+  height: 15px;
+  -webkit-mask: url("../images/icon-info.svg") no-repeat center center;
+          mask: url("../images/icon-info.svg") no-repeat center center;
+  background-color: hsl(7, 71%, 60%);
+}
+
 .error {
   display: none;
   color: hsl(7, 71%, 60%);
@@ -165,13 +173,18 @@ button {
   height: 100px;
 }
 
-.file-info {
+.file-info, .error-email {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
   font-size: 12px;
   color: hsl(245, 15%, 58%);
+}
+
+.error-email {
+  display: none;
+  color: hsl(7, 71%, 60%);
 }
 
 .upload-text {

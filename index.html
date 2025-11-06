@@ -43,7 +43,6 @@
         </div>
         <span class="file-info">
           <span class="info-icon"></span>
-          <!-- <img src="/assets/images/icon-info.svg"  class="info-icon">  -->
           <p class="text">Upload your photo (JPG or PNG, max size: 500KB).</p>
           <p class="error">File too large. Please upload a photo under: 500KB.</p>
         </span>
@@ -52,17 +51,16 @@
         <input name="full-name" id="full-name" required pattern="[a-zA-Z]{3,}\s[a-zA-Z]{3,}" minlength="3" title="Name Surname"/>
         <label for="email">Email Address</label>
         <input name="email" id="email" placeholder="example@email.com" class="input-email" autocomplete="on" type="email" required pattern="\w+@\w+\.[a-z]{2,3}" title="example@email.com"/>
+        <span class="error-email">
+          <span class="info-icon-error"></span>
+          <p>Please enter a valid email address.</p>
+        </span>
         <label for="username">GitHub Username</label>        
         <input name="username" id="username" placeholder="@yourusername" autocomplete="on" required pattern="@\w+" title="@yourusername"/>
         
         <button type="submit" class="generate-ticket">Generate My Ticket</button>
       </form>
 
-      <!-- <div class="pattern">
-        <img src="./assets/images/pattern-squiggly-line-top.svg" alt="background pattern" class="pattern__top">
-        <img src="./assets/images/pattern-lines.svg" alt="background pattern" class="pattern__lines">
-        <img src="./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg" alt="background pattern" class="pattern__bottom">
-      </div> -->
 
     </section>
   <!-- Form ends -->
