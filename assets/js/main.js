@@ -159,7 +159,6 @@ btn.addEventListener('click', (e) =>{
 const infoIcon = document.querySelector('.info-icon');
 
 function validateImg() {
-	// fileInput.addEventListener('change', function () {
 	var file = fileInput.files[0];
 	var validTypes = ['image/jpeg', 'image/png'];
 	const maxSize = 500 * 1024; // 500KB
